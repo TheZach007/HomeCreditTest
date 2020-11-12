@@ -9,23 +9,27 @@
 /* Begin PBXBuildFile section */
 		E3F60445255CFABC009BF294 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3F60444255CFABC009BF294 /* AppDelegate.swift */; };
 		E3F60447255CFABC009BF294 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3F60446255CFABC009BF294 /* SceneDelegate.swift */; };
-		E3F60449255CFABC009BF294 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3F60448255CFABC009BF294 /* ViewController.swift */; };
+		E3F60449255CFABC009BF294 /* EmailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3F60448255CFABC009BF294 /* EmailViewController.swift */; };
 		E3F6044C255CFABC009BF294 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E3F6044A255CFABC009BF294 /* Main.storyboard */; };
 		E3F6044F255CFABC009BF294 /* HomeCreditTest.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E3F6044D255CFABC009BF294 /* HomeCreditTest.xcdatamodeld */; };
 		E3F60451255CFABE009BF294 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E3F60450255CFABE009BF294 /* Assets.xcassets */; };
 		E3F60454255CFABE009BF294 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E3F60452255CFABE009BF294 /* LaunchScreen.storyboard */; };
+		E3F60462255CFD98009BF294 /* Email.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3F60461255CFD98009BF294 /* Email.swift */; };
+		E3F6046C255D0923009BF294 /* EmailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3F6046B255D0923009BF294 /* EmailTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		E3F60441255CFABC009BF294 /* HomeCreditTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HomeCreditTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E3F60444255CFABC009BF294 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E3F60446255CFABC009BF294 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		E3F60448255CFABC009BF294 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		E3F60448255CFABC009BF294 /* EmailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailViewController.swift; sourceTree = "<group>"; };
 		E3F6044B255CFABC009BF294 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E3F6044E255CFABC009BF294 /* HomeCreditTest.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = HomeCreditTest.xcdatamodel; sourceTree = "<group>"; };
 		E3F60450255CFABE009BF294 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E3F60453255CFABE009BF294 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E3F60455255CFABE009BF294 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E3F60461255CFD98009BF294 /* Email.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Email.swift; sourceTree = "<group>"; };
+		E3F6046B255D0923009BF294 /* EmailTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,7 +62,8 @@
 		E3F60443255CFABC009BF294 /* HomeCreditTest */ = {
 			isa = PBXGroup;
 			children = (
-				E3F6045D255CFAE5009BF294 /* ViewController */,
+				E3F60460255CFD72009BF294 /* Model */,
+				E3F6045D255CFAE5009BF294 /* Controller */,
 				E3F6045C255CFACE009BF294 /* View */,
 				E3F60444255CFABC009BF294 /* AppDelegate.swift */,
 				E3F60446255CFABC009BF294 /* SceneDelegate.swift */,
@@ -72,18 +77,35 @@
 		E3F6045C255CFACE009BF294 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				E3F6045F255CFD68009BF294 /* Cell */,
 				E3F6044A255CFABC009BF294 /* Main.storyboard */,
 				E3F60452255CFABE009BF294 /* LaunchScreen.storyboard */,
 			);
 			path = View;
 			sourceTree = "<group>";
 		};
-		E3F6045D255CFAE5009BF294 /* ViewController */ = {
+		E3F6045D255CFAE5009BF294 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				E3F60448255CFABC009BF294 /* ViewController.swift */,
+				E3F60448255CFABC009BF294 /* EmailViewController.swift */,
 			);
-			path = ViewController;
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		E3F6045F255CFD68009BF294 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				E3F6046B255D0923009BF294 /* EmailTableViewCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		E3F60460255CFD72009BF294 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				E3F60461255CFD98009BF294 /* Email.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -156,7 +178,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E3F60449255CFABC009BF294 /* ViewController.swift in Sources */,
+				E3F6046C255D0923009BF294 /* EmailTableViewCell.swift in Sources */,
+				E3F60449255CFABC009BF294 /* EmailViewController.swift in Sources */,
+				E3F60462255CFD98009BF294 /* Email.swift in Sources */,
 				E3F60445255CFABC009BF294 /* AppDelegate.swift in Sources */,
 				E3F60447255CFABC009BF294 /* SceneDelegate.swift in Sources */,
 				E3F6044F255CFABC009BF294 /* HomeCreditTest.xcdatamodeld in Sources */,
