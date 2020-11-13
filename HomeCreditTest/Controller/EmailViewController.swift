@@ -15,7 +15,6 @@ class EmailViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -36,6 +35,7 @@ class EmailViewController: UIViewController, UITableViewDelegate, UITableViewDat
         performSegue(withIdentifier: segueMover[indexPath.row], sender: self)
     }
 
-    @IBAction func unwindToEmail(segue: UIStoryboard) {}
+    @IBAction func unwindToEmail(segue: UIStoryboardSegue) {
+    }
 }
 
