@@ -50,6 +50,21 @@ class InboxViewController: UIViewController, UITableViewDelegate, UITableViewDat
         performSegue(withIdentifier: "toDetails", sender: indexPath.row)
     }
     
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if (editingStyle == .delete) {
+            readState.remove(at: indexPath.row)
+            fromValue.remove(at: indexPath.row)
+            timeValue.remove(at: indexPath.row)
+            subjectValue.remove(at: indexPath.row)
+            contentValue.remove(at: indexPath.row)
+            tableView.reloadData()
+        }
+    }
+    
     @IBAction func unwindToInbox(segue: UIStoryboardSegue) {
     }
     
