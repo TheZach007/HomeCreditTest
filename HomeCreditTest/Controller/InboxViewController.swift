@@ -16,6 +16,12 @@ class InboxViewController: UIViewController, UITableViewDelegate, UITableViewDat
 
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        
+        tableView.reloadData()
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return readState.count
     }
@@ -24,8 +30,10 @@ class InboxViewController: UIViewController, UITableViewDelegate, UITableViewDat
         let inboxCell : InboxTableViewCell = tableView.dequeueReusableCell(withIdentifier: "inboxCell", for: indexPath) as! InboxTableViewCell
         
         if readState[indexPath.row] == false {
+            inboxCell.readView.isHidden = false
             inboxCell.readView.image = UIImage(systemName: "circle.fill")
-        } else {
+        }
+        if readState[indexPath.row] == true {
             inboxCell.readView.isHidden = true
         }
         
@@ -46,7 +54,7 @@ class InboxViewController: UIViewController, UITableViewDelegate, UITableViewDat
         UserDefaults.standard.set(timeValue[indexPath.row], forKey: "timeData")
         UserDefaults.standard.set(subjectValue[indexPath.row], forKey: "subjectData")
         UserDefaults.standard.set(contentValue[indexPath.row], forKey: "contentData")
-        
+        readState[indexPath.row] = true
         
         performSegue(withIdentifier: "toDetails", sender: indexPath.row)
     }
@@ -64,6 +72,32 @@ class InboxViewController: UIViewController, UITableViewDelegate, UITableViewDat
             contentValue.remove(at: indexPath.row)
             self.tableView.deleteRows(at: [indexPath], with: .automatic)
 //            tableView.reloadData()
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, leadingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        if readState[indexPath.row] == true {
+            let modifyAction = UIContextualAction(style: .normal, title:  "Unread", handler: { (ac:UIContextualAction, view:UIView, success:(Bool) -> Void) in
+                print("Update action ...")
+                readState[indexPath.row] = false
+                self.tableView.reloadData()
+                success(true)
+                 })
+            modifyAction.image = UIImage(systemName: "envelope.badge.fill")
+            modifyAction.backgroundColor = UIColor.systemBlue
+            
+            return UISwipeActionsConfiguration(actions: [modifyAction])
+        } else {
+            let modifyAction = UIContextualAction(style: .normal, title:  "Read", handler: { (ac:UIContextualAction, view:UIView, success:(Bool) -> Void) in
+                print("Update action ...")
+                readState[indexPath.row] = true
+                self.tableView.reloadData()
+                success(true)
+                 })
+            modifyAction.image = UIImage(systemName: "envelope.open.fill")
+            modifyAction.backgroundColor = UIColor.systemBlue
+            
+            return UISwipeActionsConfiguration(actions: [modifyAction])
         }
     }
     
