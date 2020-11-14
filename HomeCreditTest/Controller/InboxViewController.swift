@@ -47,6 +47,7 @@ class InboxViewController: UIViewController, UITableViewDelegate, UITableViewDat
         UserDefaults.standard.set(subjectValue[indexPath.row], forKey: "subjectData")
         UserDefaults.standard.set(contentValue[indexPath.row], forKey: "contentData")
         
+        
         performSegue(withIdentifier: "toDetails", sender: indexPath.row)
     }
     
@@ -61,7 +62,8 @@ class InboxViewController: UIViewController, UITableViewDelegate, UITableViewDat
             timeValue.remove(at: indexPath.row)
             subjectValue.remove(at: indexPath.row)
             contentValue.remove(at: indexPath.row)
-            tableView.reloadData()
+            self.tableView.deleteRows(at: [indexPath], with: .automatic)
+//            tableView.reloadData()
         }
     }
     
