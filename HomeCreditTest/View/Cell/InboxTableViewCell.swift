@@ -13,6 +13,7 @@ class InboxTableViewCell: UITableViewCell {
     @IBOutlet weak var fromtLabel: UILabel!
     @IBOutlet weak var subjectLabel: UILabel!
     @IBOutlet weak var contentLabel: UILabel!
+    @IBOutlet weak var timeLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()

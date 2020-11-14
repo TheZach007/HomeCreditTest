@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E3C850B3255F5D2E000D9F44 /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3C850B2255F5D2E000D9F44 /* DetailsViewController.swift */; };
 		E3F60445255CFABC009BF294 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3F60444255CFABC009BF294 /* AppDelegate.swift */; };
 		E3F60447255CFABC009BF294 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3F60446255CFABC009BF294 /* SceneDelegate.swift */; };
 		E3F60449255CFABC009BF294 /* EmailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3F60448255CFABC009BF294 /* EmailViewController.swift */; };
@@ -22,6 +23,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		E3C850B2255F5D2E000D9F44 /* DetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
 		E3F60441255CFABC009BF294 /* HomeCreditTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HomeCreditTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E3F60444255CFABC009BF294 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E3F60446255CFABC009BF294 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -95,6 +97,7 @@
 			children = (
 				E3F60448255CFABC009BF294 /* EmailViewController.swift */,
 				E3F6046F255D0E4E009BF294 /* InboxViewController.swift */,
+				E3C850B2255F5D2E000D9F44 /* DetailsViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -196,6 +199,7 @@
 				E3F60447255CFABC009BF294 /* SceneDelegate.swift in Sources */,
 				E3F60474255D1137009BF294 /* InboxTableViewCell.swift in Sources */,
 				E3F6044F255CFABC009BF294 /* HomeCreditTest.xcdatamodeld in Sources */,
+				E3C850B3255F5D2E000D9F44 /* DetailsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
