@@ -10,16 +10,26 @@ import UIKit
 class InboxViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var editBtn: UIBarButtonItem!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         
         tableView.reloadData()
+    }
+    
+    @IBAction func editAction(_ sender: Any) {
+        if (self.tableView.isEditing) {
+            editBtn.title = "Edit"
+            self.tableView.setEditing(false, animated: true)
+        } else {
+            editBtn.title = "Done"
+            self.tableView.setEditing(true, animated: true)
+        }
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -71,14 +81,12 @@ class InboxViewController: UIViewController, UITableViewDelegate, UITableViewDat
             subjectValue.remove(at: indexPath.row)
             contentValue.remove(at: indexPath.row)
             self.tableView.deleteRows(at: [indexPath], with: .automatic)
-//            tableView.reloadData()
         }
     }
     
     func tableView(_ tableView: UITableView, leadingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         if readState[indexPath.row] == true {
             let modifyAction = UIContextualAction(style: .normal, title:  "Unread", handler: { (ac:UIContextualAction, view:UIView, success:(Bool) -> Void) in
-                print("Update action ...")
                 readState[indexPath.row] = false
                 self.tableView.reloadData()
                 success(true)
@@ -89,7 +97,6 @@ class InboxViewController: UIViewController, UITableViewDelegate, UITableViewDat
             return UISwipeActionsConfiguration(actions: [modifyAction])
         } else {
             let modifyAction = UIContextualAction(style: .normal, title:  "Read", handler: { (ac:UIContextualAction, view:UIView, success:(Bool) -> Void) in
-                print("Update action ...")
                 readState[indexPath.row] = true
                 self.tableView.reloadData()
                 success(true)

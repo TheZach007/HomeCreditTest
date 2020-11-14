@@ -7,5 +7,5 @@
 
 import Foundation
 
-var menuName = ["Inbox","Trash"]
-var menuImage = ["tray","trash"]
+var menuName = ["Inbox"]
+var menuImage = ["tray"]

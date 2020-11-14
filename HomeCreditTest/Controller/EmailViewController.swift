@@ -11,7 +11,7 @@ class EmailViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
     @IBOutlet weak var tableView: UITableView!
     
-    let segueMover = ["toInbox","toTrash"]
+    let segueMover = ["toInbox"]
     
     override func viewDidLoad() {
         super.viewDidLoad()

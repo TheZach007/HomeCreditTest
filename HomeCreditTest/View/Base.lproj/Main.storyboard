@@ -96,7 +96,11 @@
                                                 <segue destination="e42-me-TTx" kind="unwind" unwindAction="unwindToEmailWithSegue:" id="xIw-ga-3Sf"/>
                                             </connections>
                                         </barButtonItem>
-                                        <barButtonItem key="rightBarButtonItem" title="Edit" id="CwT-ty-yaq"/>
+                                        <barButtonItem key="rightBarButtonItem" title="Edit" id="CwT-ty-yaq">
+                                            <connections>
+                                                <action selector="editAction:" destination="tWP-qe-rRh" id="UsE-Iu-AMv"/>
+                                            </connections>
+                                        </barButtonItem>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
@@ -203,6 +207,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="YUL-uu-MxY"/>
                     <connections>
+                        <outlet property="editBtn" destination="CwT-ty-yaq" id="WZP-xs-we2"/>
                         <outlet property="tableView" destination="dbY-M3-3Rq" id="dxf-gC-MrZ"/>
                         <segue destination="G2h-ju-2Na" kind="show" identifier="toDetails" id="Og2-La-E79"/>
                     </connections>
